@@ -37,7 +37,7 @@
             </snapshots>
         </repository>
         <%_ } _%>
-        <%_ if (reactive) { _%>
+        <%_ if (reactive || <%# FIXME: remove when Spring Boot 2.3 is GA %> true) { _%>
         <repository>
             <id>spring-milestone</id>
             <url>https://repo.spring.io/milestone</url>
@@ -85,11 +85,11 @@
         <jhipster-dependencies.version>3.7.0-SNAPSHOT</jhipster-dependencies.version>
         <!-- The spring-boot version should match the one managed by
         https://mvnrepository.com/artifact/io.github.jhipster/jhipster-dependencies/${jhipster-dependencies.version} -->
-        <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.0.M4</spring-boot.version>
 <%_ if (databaseType === 'sql') { _%>
         <!-- The hibernate version should match the one managed by
         https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies/${spring-boot.version} -->
-        <hibernate.version>5.4.12.Final</hibernate.version>
+        <hibernate.version>5.4.13.Final</hibernate.version>
     <%_ if (!reactive) { _%>
         <!-- The javassist version should match the one managed by
         https://mvnrepository.com/artifact/org.hibernate/hibernate-core/${hibernate.version} -->
